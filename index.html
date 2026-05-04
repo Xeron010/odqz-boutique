@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ODQZ Boutique - Exclusive luxury collections and designer fashion">
+    <title>ODQZ Boutique - Luxury Fashion & Exclusive Collections</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.7;
+            color: #2a2a2a;
+            background: #faf8f3;
+        }
+        
+        header {
+            background: white;
+            padding: 25px 0;
+            border-bottom: 1px solid #e8dcc8;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav .logo {
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #8b7355;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 50px;
+        }
+        
+        nav a {
+            color: #2a2a2a;
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: #8b7355;
+        }
+        
+        .hero {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #fff8f0 0%, #faf8f3 100%);
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 56px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #2a2a2a;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .hero-text p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 45px;
+            background: #8b7355;
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .btn:hover {
+            background: #6b5345;
+            letter-spacing: 3px;
+        }
+        
+        .hero-visual {
+            background: linear-gradient(135deg, #8b7355 0%, #6b5345 100%);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 100px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: #2a2a2a;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        
+        .collections-section {
+            background: white;
+        }
+        
+        .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .collection-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .collection-image {
+            background: linear-gradient(135deg, #8b7355 0%, #6b5345 100%);
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .collection-image:hover::after {
+            opacity: 1;
+        }
+        
+        .collection-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .collection-info {
+            padding: 30px 0;
+        }
+        
+        .collection-info h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: #2a2a2a;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .collection-info p {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .collection-link {
+            color: #8b7355;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: letter-spacing 0.3s;
+        }
+        
+        .collection-link:hover {
+            letter-spacing: 3px;
+        }
+        
+        .features-section {
+            background: #faf8f3;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #2a2a2a;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .feature p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        
+        .products-section {
+            background: white;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            text-align: center;
+        }
+        
+        .product-image {
+            background: linear-gradient(135deg, #8b7355 0%, #6b5345 100%);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+        
+        .product-name {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #2a2a2a;
+            font-weight: 400;
+        }
+        
+        .product-price {
+            font-size: 16px;
+            color: #8b7355;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #8b7355 0%, #6b5345 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .cta-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+        
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-text h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ODQZ BOUTIQUE</div>
+            <ul>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Timeless Elegance & Exclusive Design</h1>
+                <p>Discover our curated collections of luxury fashion and exclusive designer pieces. Each item is carefully selected to represent the finest in contemporary and timeless design.</p>
+                <a href="#products" class="btn">Shop Collection</a>
+            </div>
+            <div class="hero-visual">👜</div>
+        </div>
+    </section>
+
+    <section class="collections-section" id="collections">
+        <div class="container">
+            <h2 class="section-title">Featured Collections</h2>
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <div class="collection-image">💎</div>
+                    <div class="collection-info">
+                        <h3>Heritage Series</h3>
+                        <p>Classic luxury pieces with timeless appeal</p>
+                        <a href="#" class="collection-link">Explore →</a>
+                    </div>
+                </div>
+
+                <div class="collection-card">
+                    <div class="collection-image">✨</div>
+                    <div class="collection-info">
+                        <h3>Contemporary Edge</h3>
+                        <p>Modern designs pushing creative boundaries</p>
+                        <a href="#" class="collection-link">Explore →</a>
+                    </div>
+                </div>
+
+                <div class="collection-card">
+                    <div class="collection-image">🎨</div>
+                    <div class="collection-info">
+                        <h3>Artisan Crafted</h3>
+                        <p>Handmade pieces by renowned artisans</p>
+                        <a href="#" class="collection-link">Explore →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">The ODQZ Boutique Experience</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Curated Selection</h3>
+                    <p>Handpicked items from the world's finest designers and artisans.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Luxury Packaging</h3>
+                    <p>Every purchase beautifully wrapped in premium packaging.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <h3>Authentication</h3>
+                    <p>All items authenticated with certificates of authenticity.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Global Delivery</h3>
+                    <p>Worldwide shipping with white-glove service available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">Latest Arrivals</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">👗</div>
+                    <h3 class="product-name">Silk Evening Gown</h3>
+                    <p class="product-price">$3,850</p>
+                    <a href="#" class="btn">View</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">👜</div>
+                    <h3 class="product-name">Leather Crossbody</h3>
+                    <p class="product-price">$2,400</p>
+                    <a href="#" class="btn">View</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">👒</div>
+                    <h3 class="product-name">Designer Hat</h3>
+                    <p class="product-price">$1,200</p>
+                    <a href="#" class="btn">View</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">👠</div>
+                    <h3 class="product-name">Couture Heels</h3>
+                    <p class="product-price">$1,950</p>
+                    <a href="#" class="btn">View</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">⌚</div>
+                    <h3 class="product-name">Luxury Timepiece</h3>
+                    <p class="product-price">$8,500</p>
+                    <a href="#" class="btn">View</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">💍</div>
+                    <h3 class="product-name">Diamond Bracelet</h3>
+                    <p class="product-price">$5,200</p>
+                    <a href="#" class="btn">View</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Discover Luxury</h2>
+            <p>Experience the finest collection of exclusive designer fashion</p>
+            <a href="#products" class="btn">Start Shopping</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ODQZ BOUTIQUE. ALL RIGHTS RESERVED.</p>
+    </footer>
+</body>
+</html>
